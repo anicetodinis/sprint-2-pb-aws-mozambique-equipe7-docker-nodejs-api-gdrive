@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cedar-fragment-415207",
+  "private_key_id": "2db15ce956658331f6c5b11774345b48dc452b62",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQClzHjneK5sQw+X\nAiugpx2UahFKq4C62K4hrX9DVCValrazFIPkw2c3FhWfeq1ox7AIvzjDBDc8JYF6\ne80jWRPPj0llCgUPX12CQBQ5H/O8Knw6GOUTunFLMEuZZdWemJNQBLa1FUMVJGC1\nDin/5ugNXROC/m5ffGeteSntThALBDMYFeDu3WC68t/1sUVTc+U0BXYi1Gcl8D/P\n+qq+KKnTxV7Ou1sMHZbYsxqptjLDZhCc1Za2AkKgeLbZExS2rwDGdsjehvcJ3z1S\nUuDJkGVOzr63IcnJrlMGtzrhwl0pI/00y79ZNli6GBqDkEcqI34+xbmmREGYuPi0\nBysRq4oBAgMBAAECggEAG+qPgfPzNHXfKl86btCsnZh1ZGP3px5ERZXjq3e/2V6u\nkP0Xjx1qo98TUXizuYSD6pkd6tIrJbSv9iphuj2tpQFci4dyHipBwaRd81dir/Bc\nXeDis11tZYpSdFft7cgFZ8//XoKfuq/XG60wm66qrFNbbW8/MNMu1snjqhn+gAgV\nm5DiTx5lVbdG2x+FULFfEJX/mWSvhYrOaUQ3UXRMhaFRFajnoB99veCN2kpntvL8\nlVnW77SK48BPYOLaHQ8N4wDdxbowj/LPkHDKIIDQ2dniKbb7BgMdAaL6JpO38i3u\njKS7IAEgZM1uJ02m+PPLCD6h4lv1A6Yw+Ug3EaiEpQKBgQDgZ0KEr6DOuz1FNevx\n78olI2wFuODq5P256S7RXsB5Lj4dgpFshMhkrE2pI4VmWo2hSEG87X6L93V8lWOG\nELmuzk+0PpWdzlmgetYu4p+6yA5X6ed8ur6OyOZ42PwOXl1VOGvECzYDfBiG63gl\np6HP1weG+WuREouhGF8KifdE9QKBgQC9JMbP9b9knMRaE8LtEC/rEOTJXmuRUEHW\nU5ZMCyZTzpbbhanyB/cVtfTOCpV18V0ZoS8STUYWeoocpszOUL4rq+nW2SpBgIgW\nwrQrRNvKPe9IEOE4oyApAJ8cO4DUqrSi8ycGz9wwzCmsRdzQrLqryePh6BKOxDgg\nifrt5/NpXQKBgQDTKLeSLcWu4sgL6WqFdbOM8OEEHW0f+6y5lS/l+jg5j4cJs8Ru\nDiCXgv9tCizMHKerPVgGlKCAyrG2Msi87d4cHK0pmb6mCPeTqCMFaWEOnJPKrCKU\n3xDTQT6GNwAv8SH4QChACKCh9NMLmmWrYStFbTz7CJbsozvashk0zJBuRQKBgQCq\nPW7AgPUqbruAQ+cfjoFCtyrlYBm7ahxH92YAvcxahEhd/3mOAcNQBDz6MqaByKO+\nTMhcVbbuxo6G6U7Pp/bywcIwAbi5yiEzMz4M7+ZPqt0y5RaB7rkkjo2nUJtNTvRU\n8ju/MtmCBlC/4QW1wLInqwh0LXh+jXfjOa3j8fCxdQKBgQCQjhFMAk/YFfZfghXb\nAduO0jiHRkumIX38eiOq5Aiefj0CWL2Nl9IGHNJieToqoLWq8BkoFt9q/5DOW/KU\nrJfiw2e90hlrJV3Fx+TbzPJjyHsFRVjsFZ9vRZgv7RoiCWrg+xibHYBd2jL+RTFp\nuf6qmWa+iq4mSeQsRNofwd1png==\n-----END PRIVATE KEY-----\n",
+  "client_email": "anicetodinis-ad@cedar-fragment-415207.iam.gserviceaccount.com",
+  "client_id": "105003743186185903933",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/anicetodinis-ad%40cedar-fragment-415207.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
