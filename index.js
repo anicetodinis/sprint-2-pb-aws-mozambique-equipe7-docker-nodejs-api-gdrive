@@ -18,8 +18,18 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.post('/upload', upload.any(), async (req, res) => {
+    try {
+        res.send("Upload realizado com sucesso");
+    } catch (f) {
+        res.send(f.message);
+    }
+});
+
 // iniciando o servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+
