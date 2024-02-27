@@ -15,3 +15,19 @@ fileInput.addEventListener('change', function () {
     }
 });
 
+const formElem = document.querySelector('form');
+    formElem.addEventListener('submit', async (e) => {
+        //console.log("form submitting")
+        e.preventDefault();
+        const response = await fetch('/upload', {
+            method: 'POST',
+            body: new FormData(formElem),
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error(' Erro : ' + response.status);
+            }
+            console.log("Upload com sucesso "+response);
+        }).catch(error => {
+            console.error("Erro ao fazer o upload - " +error);
+        });
+    });
