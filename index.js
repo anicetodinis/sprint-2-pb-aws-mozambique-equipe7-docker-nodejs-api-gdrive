@@ -10,11 +10,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+// Define a pasta 'public' para servir arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Rota para servir o arquivo index.html
 app.get('/', (req, res) => {
-    res.sendFile(`${__dirname}/index.html`);
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
-app.listen(5050, () => {
-    console.log('Form running on port 5050');
+// iniciando o servidor
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
