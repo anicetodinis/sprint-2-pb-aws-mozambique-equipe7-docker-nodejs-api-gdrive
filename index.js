@@ -51,6 +51,15 @@ app.post('/upload', upload.any(), async (req, res) => {
     }
 });
 
+app.get('/view', async (req, res) => {
+    try {
+        const file = await listFiles();
+        res.status(200).send(file);
+    } catch (f) {
+        res.send(f.message);
+    }
+});
+
 
 const uploadFile = async (fileObject) => {
     const bufferStream = new stream.PassThrough();
@@ -67,6 +76,36 @@ const uploadFile = async (fileObject) => {
         fields: "id,name",
     });
     console.log(`Uploaded file ${data.name} ${data.id}`);
+};
+
+const listFiles = async () => {
+    const res  = await drive.files.list({
+        fields: 'nextPageToken, files(id, name, mimeType, size, createdTime, modifiedTime, owners(displayName, emailAddress))',
+      });
+      const files = res.data.files;
+      if (files.length === 0) {
+        console.log('Ficheiro não encontrado.');
+        return;
+      }
+
+      /* for (const file of files) {
+                console.log(`Nome: ${file.name}`);
+                console.log(`Tipo MIME: ${file.mimeType}`);
+                console.log(`Tamanho: ${file.size} bytes`);
+                console.log(`Data de Criação: ${file.createdTime}`);
+                console.log(`Data de Modificação: ${file.modifiedTime}`);
+                console.log(`Proprietários:`);
+                for (const owner of file.owners) {
+                console.log(`  - Nome: ${owner.displayName}`);
+                console.log(`  - Email: ${owner.emailAddress}`);
+                }
+                console.log('---------------------');
+            }
+            }
+        } */
+      
+      return files;
+      
 };
 
 // iniciando o servidor
