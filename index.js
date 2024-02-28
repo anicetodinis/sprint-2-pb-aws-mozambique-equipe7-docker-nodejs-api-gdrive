@@ -22,11 +22,17 @@ app.get('/', (req, res) => {
 
 const KEYFILEPATH = path.join(__dirname, "apikeys.json");
 const SCOPES = ["https://www.googleapis.com/auth/drive"];
+const FOLDERPATH = "16cu-4XYbFKUPXIOw2MnY-7wJY7xGjlja";
 
 const auth = new google.auth.GoogleAuth({
     keyFile: KEYFILEPATH,
     scopes: SCOPES,
 });
+
+const drive = google.drive({
+    version: 'v3',
+    auth: auth,
+  });
 
 
 app.post('/upload', upload.any(), async (req, res) => {
@@ -49,14 +55,14 @@ app.post('/upload', upload.any(), async (req, res) => {
 const uploadFile = async (fileObject) => {
     const bufferStream = new stream.PassThrough();
     bufferStream.end(fileObject.buffer);
-    const { data } = await google.drive({ version: "v3", auth }).files.create({
+    const { data } = await drive.files.create({
         media: {
             mimeType: fileObject.mimeType,
             body: bufferStream,
         },
         requestBody: {
             name: fileObject.originalname,
-            parents: ["16cu-4XYbFKUPXIOw2MnY-7wJY7xGjlja"],
+            parents: [FOLDERPATH],
         },
         fields: "id,name",
     });
