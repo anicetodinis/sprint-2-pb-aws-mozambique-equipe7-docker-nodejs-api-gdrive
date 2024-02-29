@@ -51,6 +51,15 @@ app.post('/upload', upload.any(), async (req, res) => {
     }
 });
 
+app.get('/view', async (req, res) => {
+    try {
+        const file = await listFiles();
+        res.status(200).send(file);
+    } catch (f) {
+        res.send(f.message);
+    }
+});
+
 
 const uploadFile = async (fileObject) => {
     const bufferStream = new stream.PassThrough();
@@ -67,6 +76,20 @@ const uploadFile = async (fileObject) => {
         fields: "id,name",
     });
     console.log(`Uploaded file ${data.name} ${data.id}`);
+};
+
+const listFiles = async () => {
+    const res  = await drive.files.list({
+        fields: 'nextPageToken, files(id, name, mimeType, size, createdTime, modifiedTime, owners(displayName, emailAddress))',
+      });
+      const files = res.data.files;
+      if (files.length === 0) {
+        console.log('Ficheiros não encontrados.');
+        return;
+      }
+      
+      return files;
+      
 };
 
 // iniciando o servidor
