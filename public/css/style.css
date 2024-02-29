@@ -61,6 +61,7 @@ nav ul li{
     padding: 10px 15px;
     border: 1px solid gray;
     border-radius: 10px;
+    cursor: pointer;
 }
 li:hover{
     background-color: gray;
@@ -70,8 +71,37 @@ nav ul .file{
     padding: 10px 25px;
 }
 
+
+/* upload window */
+
 .upload-window{
-    background-color: blue;
-    height: 200px;
-    width: 200px;
+    background-color: rgba(128, 128, 128, 0.774);
+    background-image: url(../img/water-blur-image.jpeg);
+    background-size: cover;
+    background-blend-mode: difference;
+    width: 300px;
+    padding: 30px;
+    position: fixed;
+    right: 0;
+    left: 10;
+
+}
+
+#fileInput{
+    border: 1px solid white;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.myButton{
+    color: rgb(32, 23, 23);
+    /* font-weight: bold; */
+    padding: 5px 10px;
+}
+
+.first{
+    margin-left: 100px;
+    margin-right: 5px;
 }
