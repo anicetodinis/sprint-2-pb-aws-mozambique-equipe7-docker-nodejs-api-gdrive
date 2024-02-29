@@ -84,25 +84,9 @@ const listFiles = async () => {
       });
       const files = res.data.files;
       if (files.length === 0) {
-        console.log('Ficheiro não encontrado.');
+        console.log('Ficheiros não encontrados.');
         return;
       }
-
-      /* for (const file of files) {
-                console.log(`Nome: ${file.name}`);
-                console.log(`Tipo MIME: ${file.mimeType}`);
-                console.log(`Tamanho: ${file.size} bytes`);
-                console.log(`Data de Criação: ${file.createdTime}`);
-                console.log(`Data de Modificação: ${file.modifiedTime}`);
-                console.log(`Proprietários:`);
-                for (const owner of file.owners) {
-                console.log(`  - Nome: ${owner.displayName}`);
-                console.log(`  - Email: ${owner.emailAddress}`);
-                }
-                console.log('---------------------');
-            }
-            }
-        } */
       
       return files;
       
