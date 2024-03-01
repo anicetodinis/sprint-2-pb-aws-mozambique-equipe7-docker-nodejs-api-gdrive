@@ -27,6 +27,7 @@ body{
     height: 500px;
     width: 800px;
     border-radius: 20px;
+    position: relative;
 }
 
 nav{
@@ -76,15 +77,16 @@ nav ul .file{
 
 .upload-window{
     background-color: rgba(128, 128, 128, 0.774);
-    background-image: url(../img/water-blur-image.jpeg);
+    background-image: url(../img/blur-image.jpeg);
     background-size: cover;
     background-blend-mode: difference;
     width: 300px;
     padding: 30px;
-    position: fixed;
-    right: 0;
-    left: 10;
-
+    border-radius: 20px;
+    position: absolute;
+    right: -20px;
+    top: 70px;
+    display: none;
 }
 
 #fileInput{
@@ -93,15 +95,20 @@ nav ul .file{
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .myButton{
     color: rgb(32, 23, 23);
-    /* font-weight: bold; */
+    font-weight: bold;
     padding: 5px 10px;
+    border-radius: 10px;
 }
-
+.myButton:hover{
+    background-color: darkgreen;
+    color: white;
+}
 .first{
-    margin-left: 100px;
+    margin-left: 90px;
     margin-right: 5px;
 }
