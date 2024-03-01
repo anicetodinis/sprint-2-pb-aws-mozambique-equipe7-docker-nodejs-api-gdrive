@@ -9,7 +9,6 @@ const upload = multer();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 // Define a pasta 'public' para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -87,9 +86,9 @@ const listFiles = async () => {
         console.log('Ficheiros não encontrados.');
         return;
       }
-      
+
       return files;
-      
+
 };
 
 // iniciando o servidor
