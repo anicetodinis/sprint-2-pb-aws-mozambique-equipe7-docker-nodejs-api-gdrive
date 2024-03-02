@@ -70,6 +70,17 @@ app.get('/download', async (req, res) => {
 });
 
 
+app.get('/delete', async (req, res) => {
+    try {
+        const id = req.query.fileId;
+        const file = await deleteFile(id);
+        res.status(200).send(file);
+    } catch (f) {
+        res.send(f.message);
+    }
+});
+
+
 const uploadFile = async (fileObject) => {
     const bufferStream = new stream.PassThrough();
     bufferStream.end(fileObject.buffer);
@@ -114,6 +125,21 @@ const downloadFile = async (fileId) => {
           }); 
 
         return result.data;
+    } catch (err) {
+        
+        throw err;
+    }
+
+};
+
+const deleteFile = async (fileId) => {
+    try {
+        const response = await drive.files.delete({
+            fileId: fileId,
+          }
+        );
+          
+        return response;
     } catch (err) {
         
         throw err;
