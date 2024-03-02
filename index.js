@@ -9,7 +9,6 @@ const upload = multer();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 // Define a pasta 'public' para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -71,6 +70,17 @@ app.get('/download', async (req, res) => {
 });
 
 
+app.get('/delete', async (req, res) => {
+    try {
+        const id = req.query.fileId;
+        const file = await deleteFile(id);
+        res.status(200).send(file);
+    } catch (f) {
+        res.send(f.message);
+    }
+});
+
+
 const uploadFile = async (fileObject) => {
     const bufferStream = new stream.PassThrough();
     bufferStream.end(fileObject.buffer);
@@ -97,9 +107,9 @@ const listFiles = async () => {
         console.log('Ficheiros não encontrados.');
         return;
       }
-      
+
       return files;
-      
+
 };
 
 
@@ -122,8 +132,23 @@ const downloadFile = async (fileId) => {
 
 };
 
+const deleteFile = async (fileId) => {
+    try {
+        const response = await drive.files.delete({
+            fileId: fileId,
+          }
+        );
+          
+        return response;
+    } catch (err) {
+        
+        throw err;
+    }
+
+};
+
 // iniciando o servidor
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });

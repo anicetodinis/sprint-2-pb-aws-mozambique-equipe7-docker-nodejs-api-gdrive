@@ -1,3 +1,5 @@
+const { displayvideo } = require("googleapis/build/src/apis/displayvideo");
+
 var fileInput = document.getElementById('fileInput');
 var fileInputLabel = document.getElementById('fileInputLabel');
 
@@ -33,3 +35,4 @@ formElem.addEventListener('submit', async (e) => {
         console.error("Erro ao fazer o upload - "+ error);
     }
 });
+

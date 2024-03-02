@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
     <!-- Inclua links para folhas de estilo CSS aqui -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
-
 <body>
-    <div>
-        <h2>Selecione os ficheiros que deseja carregar</h2>
-        <p></p>
-        <form>
-            <div >
-                <label for="fileInput" id="fileInputLabel">Selecionar Ficheiro uma ou mais fotografias:</label>
-                <input id="fileInput" type="file" name="Files" required multiple />
-                
-            </div>
-            <button id="myButton" type="submit">Upload</button>
-        </form>
+    <div class="container">
+        <nav>
+           <div class="logo"><span>My</span>Galary</div>
+            <ul>
+                <li class="file">files</li>
+                <li id="upload">upload</li>
+            </ul>
+        </nav>
+        <div class="upload-window">
+            <form>
+                <div >
+                    <input id="fileInput" type="file" name="Files" required multiple />
+                </div>
+                <button id="" class="myButton first" type="submit">Submit</button>
+                <button class="myButton jsButton">Cancel</button>
+            </form>
+        </div>
     </div>
+    <script src="src/style.js"></script>
+    <!-- <script src="src/script.js"></script> -->
 </body>
-    <script src="src/script.js"></script>
 </html>
