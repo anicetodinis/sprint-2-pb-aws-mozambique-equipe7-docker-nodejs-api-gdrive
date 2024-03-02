@@ -59,6 +59,16 @@ app.get('/view', async (req, res) => {
     }
 });
 
+app.get('/download', async (req, res) => {
+    try {
+        const id = req.query.fileId;
+        const link = await downloadFile(id);
+        res.status(200).send(link);
+    } catch (f) {
+        res.send(f.message);
+    }
+});
+
 
 const uploadFile = async (fileObject) => {
     const bufferStream = new stream.PassThrough();
@@ -88,6 +98,26 @@ const listFiles = async () => {
       }
 
       return files;
+
+};
+
+
+const downloadFile = async (fileId) => {
+    try {
+          /* 
+            webViewLink: vero file no navegador
+            webContentLink: Link para download direto 
+            */
+          const result = await drive.files.get({
+            fileId: fileId,
+            fields: 'webViewLink, webContentLink',
+          }); 
+
+        return result.data;
+    } catch (err) {
+        
+        throw err;
+    }
 
 };
 
