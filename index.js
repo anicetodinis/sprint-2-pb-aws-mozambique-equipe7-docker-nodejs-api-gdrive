@@ -45,8 +45,12 @@ app.post('/upload', upload.any(), async (req, res) => {
         }
 
         res.status(200).send("Dados submetidos");
+        return true;
     } catch (f) {
+        
         res.send(f.message);
+
+        return false;
     }
 });
 
