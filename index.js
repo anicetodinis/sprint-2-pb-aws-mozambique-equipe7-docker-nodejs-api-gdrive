@@ -104,7 +104,7 @@ const uploadFile = async (fileObject) => {
 
 const listFiles = async () => {
     const res  = await drive.files.list({
-        fields: 'nextPageToken, files(id, name, mimeType, size, createdTime, modifiedTime, owners(displayName, emailAddress))',
+        fields: 'nextPageToken, files(id, name, mimeType, size, createdTime)',
       });
       const files = res.data.files;
       if (files.length === 0) {
