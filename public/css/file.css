@@ -1,0 +1,35 @@
+body{
+    background-image: url(../img/blur-image.jpeg);
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.table{
+    background-color: blueviolet;
+    margin: 40px;
+}
+.table-head, .table-items{
+    background-color: rgba(80, 80, 158, 0.753);
+    color: white;
+    display: grid;
+    border-bottom: 1px solid rgb(67, 6, 95);
+    grid-template-columns: 100px 1fr 180px 180px 150px;
+    grid-template-rows: 40px;
+}
+.table-head{
+    font-size: 18px;
+    font-weight: bold;
+}
+.table-items:hover{
+    background-color: blue;
+}
+.bar{
+    padding-left: 5px;
+    border-right: 1px solid rgb(67, 6, 95);
+    display: flex;
+    align-items: center;
+}
+
+.select:hover{
+    background-color: rgb(19, 135, 212);
+    cursor: pointer;
+}
