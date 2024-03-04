@@ -119,7 +119,7 @@ const formElem = document.querySelector('form');
 formElem.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:3000/upload', {
+        const response = await fetch('http://127.0.0.1:3000/upload', {
             method: 'POST',
             body: new FormData(formElem),
         });
@@ -130,6 +130,7 @@ formElem.addEventListener('submit', async (e) => {
         
         myModal.hide();
         mensage("success", "Upload com sucesso!");
+        fetchData()
     } catch (error) {
         myModal.hide();
         mensage("error", "Erro ao fazer o upload - "+ error);
