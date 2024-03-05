@@ -63,7 +63,7 @@ const fetchData = async () => {
     //console.log(data)
     // Process the retrieved data
     for (const file of data) {
-
+        
         links = await verBaixarFile(file.id);
         
         lista = lista + `<div class="col">
@@ -81,7 +81,7 @@ const fetchData = async () => {
               <div class="btn-group">
                   <button onclick="verBaixarFile('${file.id}', 1)"  class="btn btn-sm btn-outline-secondary" >ver</button>
                   <button onclick="verBaixarFile('${file.id}', 2)"  class="btn btn-sm btn-outline-secondary">baixar</button>
-                  <button  class="btn btn-danger btn-sm text-black btn-outline-secondary" >eliminar</button>
+                  <button  onclick="eliminarFile('${file.id}')"  class="btn btn-danger btn-sm text-black btn-outline-secondary" >eliminar</button>
               </div>
               <small class="text-muted">${file.createdTime}</small>
             </div>
@@ -130,11 +130,12 @@ formElem.addEventListener('submit', async (e) => {
         if (!response.ok) {
             throw new Error('Erro: ' + response.status);
         }
-        
+        formElem.reset();
         myModal.hide();
         mensage("success", "Upload com sucesso!");
         fetchData()
     } catch (error) {
+        formElem.reset();
         myModal.hide();
         mensage("error", "Erro ao fazer o upload - "+ error);
     }
@@ -161,4 +162,36 @@ const verBaixarFile = async (id, type) => {
   } catch (error) {
     mensage("error", "Ocorreu algum erro ao carregar os dados: "+error);
   }
+};
+
+const eliminarFile = async (id) => {
+
+    const confirmar = confirm("Deseja realmente excluir este item?");
+
+    if (confirmar) {
+    // Excluir o item
+    try{
+        const responses = await fetch(url+'/delete?fileId='+id, {
+            method: 'GET'
+        });
+    
+        if (!responses.ok) {
+          throw new Error(`API request failed with status ${responses.status}`);
+        }
+    
+        // Extract data from JSON response
+        const data = await responses.json();
+
+        fetchData();
+        
+        mensage("success", "Ficheiro "+data.name+" foi excluido com sucesso!");
+    
+      } catch (error) {
+        mensage("error", "Ocorreu algum erro ao carregar os dados: "+error);
+      }
+    } else {
+        //nao excluir
+        mensage("success", "Operacao cancelada com sucesso!");
+    }
+
 };
