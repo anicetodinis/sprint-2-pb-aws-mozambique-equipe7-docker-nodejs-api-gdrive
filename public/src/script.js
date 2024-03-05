@@ -1,6 +1,6 @@
 //const { displayvideo } = require("googleapis/build/src/apis/displayvideo");
 var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'))
-
+const url = 'http://127.0.0.1:3000'
 
 function mensage(type, msg){
     
@@ -42,12 +42,12 @@ function getTypeFile(type){
     }
 }
 
-const url = "";
+
 const fetchData = async () => {
     var dadoslistados = document.getElementById('meusdados');
     try{
     
-    const responses = await fetch('http://127.0.0.1:3000/view', {
+    const responses = await fetch(url+'/view', {
         method: 'GET'
     });
 
@@ -58,10 +58,13 @@ const fetchData = async () => {
     // Extract data from JSON response
     const data = await responses.json();
     let lista = '';
+    let links = "";
 
     //console.log(data)
     // Process the retrieved data
     for (const file of data) {
+
+        links = await verBaixarFile(file.id);
         
         lista = lista + `<div class="col">
         <div class="card shadow-sm">
@@ -76,9 +79,9 @@ const fetchData = async () => {
 
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">baixar</button>
-                  <button type="button" class="btn btn-danger btn-sm text-black btn-outline-secondary">eliminar</button>
+                  <button onclick="verBaixarFile('${file.id}', 1)"  class="btn btn-sm btn-outline-secondary" >ver</button>
+                  <button onclick="verBaixarFile('${file.id}', 2)"  class="btn btn-sm btn-outline-secondary">baixar</button>
+                  <button  class="btn btn-danger btn-sm text-black btn-outline-secondary" >eliminar</button>
               </div>
               <small class="text-muted">${file.createdTime}</small>
             </div>
@@ -91,7 +94,7 @@ const fetchData = async () => {
      dadoslistados.innerHTML = "";
      dadoslistados.innerHTML = lista;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    mensage("error", "Ocorreu algum erro ao carregar os dados: "+error);
   }
 };
 
@@ -119,7 +122,7 @@ const formElem = document.querySelector('form');
 formElem.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://127.0.0.1:3000/upload', {
+        const response = await fetch(url+'/upload', {
             method: 'POST',
             body: new FormData(formElem),
         });
@@ -137,3 +140,25 @@ formElem.addEventListener('submit', async (e) => {
     }
 });
 
+const verBaixarFile = async (id, type) => {
+    try{
+    const responses = await fetch(url+'/download?fileId='+id, {
+        method: 'GET'
+    });
+
+    if (!responses.ok) {
+      throw new Error(`API request failed with status ${responses.status}`);
+    }
+
+    // Extract data from JSON response
+    const data = await responses.json();
+    if (type === 1){
+        window.open(data.webViewLink);
+    }else if(type === 2){
+        window.open(data.webContentLink);
+    }
+
+  } catch (error) {
+    mensage("error", "Ocorreu algum erro ao carregar os dados: "+error);
+  }
+};
