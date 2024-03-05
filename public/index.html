@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
+<<<<<<< HEAD
     <div class="container">
         <nav>
            <div class="logo"><span>My</span>Galary</div>
@@ -26,8 +27,100 @@
                 </div>
                 <button id="myButton" type="submit">Upload</button>
             </form>
+=======
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> -->
+            <img src="icon/folder.png"width="20" height="20" alt="" srcset="">
+            <strong>MyFiles</strong>
+          </a>
+          
+>>>>>>> 8894e330f15640157f01d2955bcd93cc5f9709d7
         </div>
-    </div>
+      </div>
+    </header>
+    
+    <main>
+    
+      <section class="py-1 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">MyFiles</h1>
+            <p class="lead text-muted">API Google Drive</p>
+            <p>
+              <a href="#" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Upload</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    
+      <div class="album py-1 bg-light">
+        <div class="container">
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 meusdados" id="meusdados">
+            
+            <h1 class="text-center">Processando...</h1>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Selecionar File para Upload</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+              <div class="modal-body">
+                <label class="input-group-text" id="fileInputLabel"  for="fileInput">Selecionar File:</label>
+                  <div class="input-group mb-3">
+                      <input type="file" class="form-control form-control-lg" name="Files" id="fileInput" required multiple />
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  id="myButton" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary myButton jsButton">Upload</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      
+      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToastSuccess" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body " id="mensage-success">
+                Hello, world! This is a toast message.
+              </div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToastError" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body " id="mensage-error">
+                    Hello, world! This is a toast message.
+                  </div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+        </div>
+    
+    
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="mb-1">&copy; Equipe7 AWS</p>
+       </div>
+    </footer>
     <script src="src/style.js"></script>
     <script src="src/script.js"></script>
 </body>
