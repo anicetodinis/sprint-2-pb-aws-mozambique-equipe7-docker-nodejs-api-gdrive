@@ -1,6 +1,6 @@
 //const { displayvideo } = require("googleapis/build/src/apis/displayvideo");
 var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'))
-const url = 'http://127.0.0.1:3000'
+const url = 'http://localhost:3000'
 
 function mensage(type, msg){
     
