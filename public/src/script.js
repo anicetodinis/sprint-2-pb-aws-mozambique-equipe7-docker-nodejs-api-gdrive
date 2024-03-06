@@ -1,6 +1,5 @@
 //const { displayvideo } = require("googleapis/build/src/apis/displayvideo");
 var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'))
-const url = 'http://localhost:3000'
 
 function mensage(type, msg){
     
@@ -47,7 +46,7 @@ const fetchData = async () => {
     var dadoslistados = document.getElementById('meusdados');
     try{
     
-    const responses = await fetch(url+'/view', {
+    const responses = await fetch('/view', {
         method: 'GET'
     });
 
@@ -122,7 +121,7 @@ const formElem = document.querySelector('form');
 formElem.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch(url+'/upload', {
+        const response = await fetch('/upload', {
             method: 'POST',
             body: new FormData(formElem),
         });
@@ -143,7 +142,7 @@ formElem.addEventListener('submit', async (e) => {
 
 const verBaixarFile = async (id, type) => {
     try{
-    const responses = await fetch(url+'/download?fileId='+id, {
+    const responses = await fetch('/download?fileId='+id, {
         method: 'GET'
     });
 
@@ -171,7 +170,7 @@ const eliminarFile = async (id) => {
     if (confirmar) {
     // Excluir o item
     try{
-        const responses = await fetch(url+'/delete?fileId='+id, {
+        const responses = await fetch('/delete?fileId='+id, {
             method: 'GET'
         });
     
