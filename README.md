@@ -16,6 +16,15 @@
 </ul>
 
 <h2>Como usar o systema</h2>
+<p>Host URL: <a href="http://3.88.235.22:3000/" >click aque</a></p>
+<p>Apois de aceder ao systema podes afazer as seguintes operações</p>
+
+<h3>Upload file</h3>
+![image-upload-button](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/e45a90eb-ffa3-476d-a51f-2e1545a6d4c1)
+
+![image-upload](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/f89f736c-fcce-4cf2-ab07-54a6bf04ddc4)
+
+![image-liste-file](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/78a62fa5-04d9-42fd-b407-ea21da8ea98b)
 
 <p></p>
 
