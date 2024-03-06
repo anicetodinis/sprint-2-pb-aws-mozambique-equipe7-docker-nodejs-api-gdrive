@@ -20,13 +20,19 @@
 <p>Apois de aceder ao systema podes afazer as seguintes operações</p>
 
 <h3>Upload file</h3>
-![image-upload-button](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/e45a90eb-ffa3-476d-a51f-2e1545a6d4c1)
+
+<p>para poder fazer o upload de ficheiro click no button <strong>Upload</strong> de seguida vai abrir uma janela</p>
+
+![image-upload-button](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/b080a221-345d-474d-90f4-6e29484a0a62)
+
+<p>Tendo a janela aberta podes selecionar o ficheiro na sua maquina local podendo ser uma ou varias de uma so vez </p>
+<p>apois selecionar click no button <strong>upload</strong> ou se não quizer mais fazer a operação clica no button <strong>fechar</strong></p>
 
 ![image-upload](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/f89f736c-fcce-4cf2-ab07-54a6bf04ddc4)
 
-![image-liste-file](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/78a62fa5-04d9-42fd-b407-ea21da8ea98b)
+<p>Feito o upload dos seus ficheiros elas serão listados no na mesma pagina, tendo control de fazer downlad, delete e view do ficheiro</p>
 
-<p></p>
+![image-liste-file](https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive/assets/104785625/78a62fa5-04d9-42fd-b407-ea21da8ea98b)
 
 <h2>Dificuldades encontradas</h2>
 
