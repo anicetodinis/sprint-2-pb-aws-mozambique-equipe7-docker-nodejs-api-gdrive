@@ -18,12 +18,15 @@
 <h2>Como usar o sistema</h2>
 <p>Formas de inicializar o projecto</p>
 <p>1. Clone do projecto:</p>
+
 ```
 git clone https://github.com/anicetodinis/sprint-2-pb-aws-mozambique-equipe7-docker-nodejs-api-gdrive.git
 ```
+
 ```
 npm install
 ```
+
 ```
 npm start
 ```
@@ -31,6 +34,7 @@ npm start
 Ou
 
 <p>2. Imagem Docker:</p>
+
 ```
 sudo docker pull anicetodinis/hey-nodejs:0.0.2.RELEASE
 ```
